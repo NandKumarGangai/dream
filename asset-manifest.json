@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/dream/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/dream/static/js/main.3a33962d.chunk.js",
-    "main.js.map": "/dream/static/js/main.3a33962d.chunk.js.map",
-    "runtime-main.js": "/dream/static/js/runtime-main.19e135fe.js",
-    "runtime-main.js.map": "/dream/static/js/runtime-main.19e135fe.js.map",
-    "static/js/2.89a7c676.chunk.js": "/dream/static/js/2.89a7c676.chunk.js",
-    "static/js/2.89a7c676.chunk.js.map": "/dream/static/js/2.89a7c676.chunk.js.map",
-    "static/js/3.906f71bb.chunk.js": "/dream/static/js/3.906f71bb.chunk.js",
-    "static/js/3.906f71bb.chunk.js.map": "/dream/static/js/3.906f71bb.chunk.js.map",
-    "index.html": "/dream/index.html",
-    "service-worker.js": "/dream/service-worker.js",
-    "service-worker.js.map": "/dream/service-worker.js.map",
-    "static/css/main.6dea0f05.chunk.css.map": "/dream/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.89a7c676.chunk.js.LICENSE.txt": "/dream/static/js/2.89a7c676.chunk.js.LICENSE.txt"
+    "main.css": "/NandKumarGangai/dream/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/NandKumarGangai/dream/static/js/main.202739c7.chunk.js",
+    "main.js.map": "/NandKumarGangai/dream/static/js/main.202739c7.chunk.js.map",
+    "runtime-main.js": "/NandKumarGangai/dream/static/js/runtime-main.01c23cc9.js",
+    "runtime-main.js.map": "/NandKumarGangai/dream/static/js/runtime-main.01c23cc9.js.map",
+    "static/js/2.89a7c676.chunk.js": "/NandKumarGangai/dream/static/js/2.89a7c676.chunk.js",
+    "static/js/2.89a7c676.chunk.js.map": "/NandKumarGangai/dream/static/js/2.89a7c676.chunk.js.map",
+    "static/js/3.906f71bb.chunk.js": "/NandKumarGangai/dream/static/js/3.906f71bb.chunk.js",
+    "static/js/3.906f71bb.chunk.js.map": "/NandKumarGangai/dream/static/js/3.906f71bb.chunk.js.map",
+    "index.html": "/NandKumarGangai/dream/index.html",
+    "service-worker.js": "/NandKumarGangai/dream/service-worker.js",
+    "service-worker.js.map": "/NandKumarGangai/dream/service-worker.js.map",
+    "static/css/main.6dea0f05.chunk.css.map": "/NandKumarGangai/dream/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.89a7c676.chunk.js.LICENSE.txt": "/NandKumarGangai/dream/static/js/2.89a7c676.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.19e135fe.js",
+    "static/js/runtime-main.01c23cc9.js",
     "static/js/2.89a7c676.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.3a33962d.chunk.js"
+    "static/js/main.202739c7.chunk.js"
   ]
 }

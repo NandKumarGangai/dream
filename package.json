@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/NandKumarGangai/dream",
+  "//homepage": "https://nandkumargangai.github.io/dream",
   "name": "dream",
   "version": "0.1.0",
   "private": true,
@@ -37,6 +37,10 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "serve": "npm run build && serve -s build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NandKumarGangai/dream.git"
   },
   "eslintConfig": {
     "extends": [

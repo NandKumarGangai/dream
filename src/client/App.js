@@ -1,21 +1,39 @@
-import React, { lazy, Suspense } from 'react';
-import { Route } from "react-router-dom";
+import React, { Suspense } from 'react';
+import { Redirect, Route } from "react-router-dom";
+import { appRoutes } from './PageRoutes';
+import { STORAGE } from './Utils/storage';
 
 const renderLoader = () => <h1>Loading</h1>;
-const LoginPageComponent = lazy(() => import('./pages/LoginComponent'));
-const UserRegistrationComponent = lazy(() => import('./pages/UserRegistrationComponent'));
-const ForgotPasswordComponent = lazy(() => import('./pages/ForgotPasswordComponent'));
-const LandingPageComponent = lazy(() => import('./pages/LandingComponent'));
+
+const RedirectComponent = () => <Redirect to='/' />;
+
+const mapRoutes = ({ route, isPrivate, Component }) => {
+    const isUserLoggedIn = STORAGE.getToken() || false;
+
+    return (<Route
+        exact path={route}
+        component={
+            !isPrivate
+                ? Component
+                : (
+                    isUserLoggedIn && isPrivate
+                        ? Component
+                        : RedirectComponent
+                )
+        }
+    />);
+}
+
+const createRoutes = (appRoutes) => appRoutes.map(mapRoutes);
 
 const App = () => {
-  return (
-    <Suspense fallback={renderLoader()}>
-      <Route exact path={["/", "/login"]}><LoginPageComponent /></Route>
-      <Route exact path="/signup"><UserRegistrationComponent /></Route>
-      <Route exact path="/forgot-password"><ForgotPasswordComponent /></Route>
-      <Route exact path="/home"><LandingPageComponent /></Route>
-    </Suspense>
-  );
+    return (
+        <Suspense fallback={renderLoader()}>
+            {
+                createRoutes(appRoutes)
+            }
+        </Suspense>
+    );
 }
 
 export default App;

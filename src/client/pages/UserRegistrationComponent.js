@@ -1,27 +1,30 @@
+import { withRouter } from 'react-router-dom';
 import { UserRegistrationPage } from '../components';
+import { Apis } from '../ServiceCalls';
 
 const initialValues = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
+    firstName: 'Nandkumar',
+    lastName: 'Gangai',
+    email: 'nandkumargangai@gmail.com',
+    password: 'Nandu@1234',
+    confirmPassword: 'Nandu@1234'
 };
 
-const UserRegistrationComponent = () => {
+const UserRegistrationComponent = ({ history }) => {
 
-    const onSubmit = values => {
+    const onSubmit = (values, { resetForm }) => {
         console.log(JSON.stringify(values, null, 2));
-        fetch('/test', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(values)
-        })
-            .then(response => response.json())
-            .then(response => console.log('response: ', response))
-            .catch(err => console.error(err));
+        Apis.addNewUser(values, history, resetForm);
+        // fetch('/test', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(values)
+        // })
+        //     .then(response => response.json())
+        //     .then(response => console.log('response: ', response))
+        //     .catch(err => console.error(err));
     };
 
     const props = {
@@ -34,4 +37,4 @@ const UserRegistrationComponent = () => {
     );
 };
 
-export default UserRegistrationComponent;
+export default withRouter(UserRegistrationComponent);

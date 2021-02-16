@@ -1,24 +1,17 @@
+import { withRouter } from 'react-router-dom';
 import { LoginPage } from '../components';
+import { Apis } from '../ServiceCalls';
 
 const initialValues = {
-    password: '',
-    email: '',
+    password: 'Nandu@1234',
+    email: 'nandkumargangai@gmail.com',
 };
 
-const LoginComponent = () => {
+const LoginComponent = ({ history }) => {
 
-    const onSubmit = values => {
+    const onSubmit = (values, { resetForm }) => {
         console.log(JSON.stringify(values, null, 2));
-        fetch('/test', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(values)
-        })
-            .then(response => response.json())
-            .then(response => console.log('response: ', response))
-            .catch(err => console.error(err));
+        Apis.userLogin(values, history, resetForm)
     };
 
     const props = {
@@ -31,4 +24,4 @@ const LoginComponent = () => {
     );
 };
 
-export default LoginComponent;
+export default withRouter(LoginComponent);

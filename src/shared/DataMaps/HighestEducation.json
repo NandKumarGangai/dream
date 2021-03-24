@@ -1,0 +1,34 @@
+[
+    {
+        "value": "",
+        "desc": "Select"
+    },
+    {
+        "value": "B",
+        "desc": "Bachelor's degree"
+    },
+    {
+        "value": "M",
+        "desc": "Master's degree and more"
+    },
+    {
+        "value": "D",
+        "desc": "Diploma"
+    },
+    {
+        "value": "H",
+        "desc": "Higher Secondary"
+    },
+    {
+        "value": "S",
+        "desc": "Secondary School"
+    },
+    {
+        "value": "I",
+        "desc": "Technical Courses like ITI"
+    },
+    {
+        "value": "O",
+        "desc": "Other"
+    }
+]

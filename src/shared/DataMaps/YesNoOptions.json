@@ -1,0 +1,14 @@
+[
+    {
+        "value": "",
+        "desc": "Select"
+    },
+    {
+        "value": "Y",
+        "desc": "Yes"
+    },
+    {
+        "value": "N",
+        "desc": "No"
+    }
+]

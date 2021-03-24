@@ -1,15 +1,26 @@
+import HomePage from './HomePage';
 import './style.css';
 
 const Glassmorphism = () =>
 (<div className='landing-page-container'>
-    <div className="card">Nandkumar Gangai</div>
+    <div className="card">{'Nandkumar Gangai'}</div>
 </div>);
 
 const Neumorph = () =>
     <div className='flower-container'>
         <div className="flower">
-            Nandkumar Gangai
-    </div>
+            {'Nandkumar Gangai'}
+        </div>
+        <div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+        </div>
     </div>;
 
 const Neumorph2 = () =>
@@ -32,7 +43,9 @@ const Neumorph2 = () =>
 const LandingPage = () => {
     return (
         // <Glassmorphism />
-        <Neumorph2 />
+        // <Neumorph />
+        // <Neumorph2 />
+        <HomePage />
     )
 }
 

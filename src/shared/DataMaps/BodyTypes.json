@@ -1,0 +1,18 @@
+[
+    {
+        "value": "",
+        "desc": "Select"
+    },
+    {
+        "value": "S",
+        "desc": "Skinny"
+    },
+    {
+        "value": "N",
+        "desc": "Normal"
+    },
+    {
+        "value": "F",
+        "desc": "Fatty"
+    }
+]

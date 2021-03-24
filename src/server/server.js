@@ -27,26 +27,26 @@ const runServer = app => {
         })
     });
 
-    app.post('/api/v1/register', (req, res) => {
-        const token = jwt.sign({
-            data: req.body.email
-        }, process.env.JWT_SECRET, { expiresIn: 60 * 60 });
+    // app.post('/api/v1/register', (req, res) => {
+    //     const token = jwt.sign({
+    //         data: req.body.email
+    //     }, process.env.JWT_SECRET, { expiresIn: 60 * 60 });
 
-        console.log('token: ', token);
-        res.status(200).json({
-            success: true,
-            token
-        });
-    });
+    //     console.log('token: ', token);
+    //     res.status(200).json({
+    //         success: true,
+    //         token
+    //     });
+    // });
 
-    app.post('/api/v1/auth/login', (req, res) => {
-        const token = req.header('Authorization').split('').slice(7,).join('');
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        console.log('decoded: ', decoded);
-        res.status(200).json({
-            success: true
-        })
-    });
+    // app.post('/api/v1/auth/login', (req, res) => {
+    //     const token = req.header('Authorization').split('').slice(7,).join('');
+    //     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    //     console.log('decoded: ', decoded);
+    //     res.status(200).json({
+    //         success: true
+    //     })
+    // });
 
     app.get('/', (req, res) => {
         res.sendFile(path.join(__dirname, 'build', 'index.html'));

@@ -12,6 +12,12 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import InputLabel from '@material-ui/core/InputLabel';
+
 import { validationSchema } from './validateForm';
 
 const useStyles = makeStyles((theme) => ({
@@ -32,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
     submit: {
         margin: theme.spacing(3, 0, 2),
     },
+    fullWidth: {
+        width: '100%'
+    }
 }));
 
 export default function SignUp({ initialValues, onSubmit }) {
@@ -55,7 +64,7 @@ export default function SignUp({ initialValues, onSubmit }) {
                     </Typography>
                     <div className={classes.form}>
                         <Grid container spacing={2}>
-                            <Grid item xs={12} sm={6}>
+                            {/* <Grid item xs={12} sm={6}>
                                 <TextField
                                     autoComplete='fname'
                                     name='firstName'
@@ -82,6 +91,105 @@ export default function SignUp({ initialValues, onSubmit }) {
                                     onChange={formik.handleChange}
                                     error={formik.touched.lastName && Boolean(formik.errors.lastName)}
                                     helperText={formik.touched.lastName && formik.errors.lastName}
+                                />
+                            </Grid> */}
+                            <Grid item xs={12}>
+                                <FormControl variant="outlined" className={classes.fullWidth} error={formik.touched.gender && Boolean(formik.errors.gender)}>
+                                    <InputLabel id="profile-for-label">{'Profile For'}</InputLabel>
+                                    <Select
+                                        labelId="profileFor"
+                                        id="profileFor"
+                                        name="profileFor"
+                                        label="Profile for"
+                                        autoWidth={false}
+                                        displayEmpty={false}
+                                        className={classes.fullWidth}
+                                        value={formik.values.profileFor}
+                                        onChange={e => formik.handleChange(e)}
+                                    >
+                                        <MenuItem value="">{'Select'}</MenuItem>
+                                        <MenuItem value={'M'}>{'Self'}</MenuItem>
+                                        <MenuItem value={'B'}>{'Brother'}</MenuItem>
+                                        <MenuItem value={'S'}>{'Sister'}</MenuItem>
+                                        <MenuItem value={'O'}>{'Son'}</MenuItem>
+                                        <MenuItem value={'D'}>{'Daughter'}</MenuItem>
+                                        <MenuItem value={'R'}>{'Relative'}</MenuItem>
+                                        <MenuItem value={'F'}>{'Friend'}</MenuItem>
+                                    </Select>
+                                    {
+                                        formik.touched.profileFor && Boolean(formik.errors.profileFor)
+                                            ? <FormHelperText>{formik.touched.profileFor && formik.errors.profileFor}</FormHelperText>
+                                            : null
+                                    }
+                                </FormControl>
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextField
+                                    variant='outlined'
+                                    fullWidth
+                                    id='name'
+                                    label='Full name'
+                                    name='name'
+                                    autoComplete='name'
+                                    value={formik.values.name}
+                                    onChange={formik.handleChange}
+                                    error={formik.touched.name && Boolean(formik.errors.name)}
+                                    helperText={formik.touched.name && formik.errors.name}
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <FormControl variant="outlined" className={classes.fullWidth} error={formik.touched.gender && Boolean(formik.errors.gender)}>
+                                    <InputLabel id="gender-label">{'Gender'}</InputLabel>
+                                    <Select
+                                        labelId="gender"
+                                        id="gender"
+                                        name="gender"
+                                        label="Gender"
+                                        autoWidth={false}
+                                        displayEmpty={false}
+                                        className={classes.fullWidth}
+                                        value={formik.values.gender}
+                                        onChange={e => formik.handleChange(e)}
+                                    >
+                                        <MenuItem value="">{'Select'}</MenuItem>
+                                        <MenuItem value={'M'}>{'Male'}</MenuItem>
+                                        <MenuItem value={'F'}>{'Female'}</MenuItem>
+                                        <MenuItem value={'O'}>{'Other'}</MenuItem>
+                                    </Select>
+                                    {
+                                        formik.touched.gender && Boolean(formik.errors.gender)
+                                            ? <FormHelperText>{formik.touched.gender && formik.errors.gender}</FormHelperText>
+                                            : null
+                                    }
+                                </FormControl>
+                            </Grid>
+                            <Grid item xs={12} style={{margin: "0"}}>
+                                <TextField
+                                    variant='outlined'
+                                    fullWidth
+                                    name='religion'
+                                    label='Religion'
+                                    id='religion'
+                                    autoComplete='Religion'
+                                    value={formik.values.religion}
+                                    onChange={formik.handleChange}
+                                    error={formik.touched.religion && Boolean(formik.errors.religion)}
+                                    helperText={formik.touched.religion && formik.errors.religion}
+                                />
+                            </Grid>
+                            <Grid item xs={12} style={{margin: "0"}}>
+                                <TextField
+                                    variant='outlined'
+                                    fullWidth
+                                    name='mobileNumber'
+                                    label='Mobile number'
+                                    type='tel'
+                                    id='mobileNumber'
+                                    autoComplete='Mobile number'
+                                    value={formik.values.mobileNumber}
+                                    onChange={formik.handleChange}
+                                    error={formik.touched.mobileNumber && Boolean(formik.errors.mobileNumber)}
+                                    helperText={formik.touched.mobileNumber && formik.errors.mobileNumber}
                                 />
                             </Grid>
                             <Grid item xs={12}>

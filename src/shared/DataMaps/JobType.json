@@ -1,0 +1,22 @@
+[
+    {
+        "value": "",
+        "desc": "Select"
+    },
+    {
+        "value": "G",
+        "desc": "Government"
+    },
+    {
+        "value": "P",
+        "desc": "Private Sector"
+    },
+    {
+        "value": "B",
+        "desc": "Self Business"
+    },
+    {
+        "value": "O",
+        "desc": "Other"
+    }
+]

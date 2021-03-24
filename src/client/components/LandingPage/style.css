@@ -30,6 +30,7 @@
   background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
   background-image: url('./img_6.JPG');
   background-clip: border-box;
+  animation: hue_rotate 4s infinite;
 }
 
 /* .landing-page-container::before {
@@ -132,6 +133,7 @@
     rgb(245, 29, 29)
   );
   position: relative;
+  animation: hue_rotate 4s infinite;
 }
 
 /* .vd-card-container::before {
@@ -268,4 +270,13 @@
 }
 .balloon:nth-child(8):before {
   color: hsl(59, 30%, 52%);
+}
+
+@keyframes hue_rotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
 }

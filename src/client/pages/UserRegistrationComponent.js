@@ -3,8 +3,11 @@ import { UserRegistrationPage } from '../components';
 import { Apis } from '../ServiceCalls';
 
 const initialValues = {
-    firstName: 'Nandkumar',
-    lastName: 'Gangai',
+    profileFor: '',
+    name: '',
+    gender: '',
+    religion: '',
+    mobileNumber: '',
     email: 'nandkumargangai@gmail.com',
     password: 'Nandu@1234',
     confirmPassword: 'Nandu@1234'

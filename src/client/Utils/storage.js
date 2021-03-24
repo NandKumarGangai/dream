@@ -1,4 +1,4 @@
-const myStorage = window.sessionStorage;
+const myStorage = sessionStorage;
 
 const setToken = _ => {
     myStorage.setItem('token', `Bearer ${_}`);

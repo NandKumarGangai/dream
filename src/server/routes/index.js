@@ -1,87 +1,62 @@
-const bcrypt = require('bcrypt');
 const express = require('express');
-const _get = require('lodash/get');
 const jwt = require('jsonwebtoken');
 
-const Register = require('../db/models/User.model');
-const { genericError, genericResponseSender, status } = require('../utils');
+const UsersModel = require('../db/models/UsersModel');
+const { interceptRequest } = require('../middlewares/interceptRequest');
+const {
+    authorizationError,
+    genericResponseSender,
+    status
+} = require('../utils');
+
+const {
+    userLoginController,
+    userRegistrationController,
+    userProfileUpdateController,
+    getUserProfileInfoController,
+    getCandidateProfilesController
+} = require('../controllers');
 
 const Router = express.Router();
 
-Router.post('/register-user', (req, res) => {
-    const saltRounds = Number(process.env.SALT || 10);
+Router.post('/register-user', userRegistrationController);
 
-    bcrypt.genSalt(saltRounds, function (err, salt) {
+Router.post('/user-login', userLoginController);
+
+Router.put('/update-user-profile/', interceptRequest, userProfileUpdateController);
+
+Router.post('/get-user-profile/', interceptRequest, getUserProfileInfoController);
+
+Router.post('/get-candidate-profiles', interceptRequest, getCandidateProfilesController);
+
+Router.get('/get-users', interceptRequest, (req, res) => {
+
+    return jwt.verify(req.token, process.env.JWT_SECRET, (err, authData) => {
         if (err) {
-            return genericError(res, err);
-        }
-
-        const body = _get(req, 'body', {});
-        const { password } = body;
-
-        bcrypt.hash(password, salt, async function (err, hash) {
-            if (err) {
-                return genericError(res, err);
-            }
-
-            try {
-                const newUser = new Register({
-                    ...body,
-                    password: hash,
-                    confirmPassword: hash
-                });
-                newUser.save((err, response) => {
-                    if (err) {
-                        console.error('error: ', err);
-                        return genericError(res, err);
-                    }
-
-                    genericResponseSender(res, { status: status.CREATED, response: { message: `Created ${[response].length} record....` } });
-                });
-            } catch (error) {
-                return genericError(res, error);
-            }
-        });
-    });
-});
-
-
-Router.post('/user-login', (req, res) => {
-
-    const { email, password } = _get(req, 'body', {});
-
-    return Register.findOne({ email }).then(result => {
-        if (result) {
-            const hash = _get(result, 'password');
-            bcrypt.compare(password, hash, function (err, check) {
-                console.log('check: ', result);
-                if (check) {
-                    const token = jwt.sign(
-                        {
-                            data: req.body.email
-                        },
-                        process.env.JWT_SECRET,
-                        {
-                            expiresIn: 60 * 60
-                        }
-                    );
-                    const { firstName, lastName, email } = result;
-                    response = {
-                        token,
-                        user: {
-                            firstName,
-                            lastName,
-                            email
-                        }
-                    }
-                    return genericResponseSender(res, { status: status.SUCCESS, response });
-                }
-                return genericError(res, err);
-            });
+            return authorizationError(res, err);
         } else {
-            return genericError(res);
+            console.log('AuthData: ', authData)
+            UsersModel.find().then(results => {
+                const params = {
+                    status: status.SUCCESS,
+                    response: {
+                        users: results,
+                        length: results.length
+                    }
+                }
+                return genericResponseSender(res, params);
+            });
         }
     });
 });
 
 module.exports = Router;
+
+
+// return jwt.verify(req.token, process.env.JWT_SECRET, (err, authData) => {
+//     if (err) {
+//         return authorizationError(res, err);
+//     } else {
+        
+//     }
+// });

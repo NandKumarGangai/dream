@@ -1,0 +1,5 @@
+export const SET_MESSAGE = "SET_MESSAGE";
+export const RESET_MESSAGE = "RESET_MESSAGE";
+export const USER_LOGGED_IN = 'USER_LOGGED_IN';
+export const USER_PROFILE = 'USER_PROFILE';
+export const CANDIDATE_PROFILES = 'CANDIDATE_PROFILES';

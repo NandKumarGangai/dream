@@ -1,0 +1,112 @@
+[
+    {
+        "profileFor": "M",
+        "name": "Virat Kohli",
+        "gender": "M",
+        "religion": "Hindu",
+        "mobileNumber": "9658745555",
+        "email": "virat@gmail.com",
+        "password": "Pass@1234",
+        "confirmPassword": "Pass@1234"
+    },
+    {
+        "profileFor": "M",
+        "name": "Rohit Kohli",
+        "gender": "M",
+        "religion": "Hindu",
+        "mobileNumber": "9658745555",
+        "email": "rohit@gmail.com",
+        "password": "Pass@1234",
+        "confirmPassword": "Pass@1234"
+    },
+    {
+        "profileFor": "M",
+        "name": "Shubnam Kohli",
+        "gender": "M",
+        "religion": "Hindu",
+        "mobileNumber": "9658745555",
+        "email": "shubnam@gmail.com",
+        "password": "Pass@1234",
+        "confirmPassword": "Pass@1234"
+    },
+    {
+        "profileFor": "M",
+        "name": "Cheteshwar Kohli",
+        "gender": "M",
+        "religion": "Hindu",
+        "mobileNumber": "9658745555",
+        "email": "cheteshwar@gmail.com",
+        "password": "Pass@1234",
+        "confirmPassword": "Pass@1234"
+    },
+    {
+        "profileFor": "M",
+        "name": "Ajinkya Kohli",
+        "gender": "M",
+        "religion": "Hindu",
+        "mobileNumber": "9658745555",
+        "email": "ajinkya@gmail.com",
+        "password": "Pass@1234",
+        "confirmPassword": "Pass@1234"
+    },
+    {
+        "profileFor": "M",
+        "name": "Rishab Kohli",
+        "gender": "M",
+        "religion": "Hindu",
+        "mobileNumber": "9658745555",
+        "email": "rishab@gmail.com",
+        "password": "Pass@1234",
+        "confirmPassword": "Pass@1234"
+    },
+    {
+        "profileFor": "M",
+        "name": "Ravi Kohli",
+        "gender": "M",
+        "religion": "Hindu",
+        "mobileNumber": "9658745555",
+        "email": "ravi@gmail.com",
+        "password": "Pass@1234",
+        "confirmPassword": "Pass@1234"
+    },
+    {
+        "profileFor": "M",
+        "name": "Washi Kohli",
+        "gender": "M",
+        "religion": "Hindu",
+        "mobileNumber": "9658745555",
+        "email": "washi@gmail.com",
+        "password": "Pass@1234",
+        "confirmPassword": "Pass@1234"
+    },
+    {
+        "profileFor": "M",
+        "name": "Axar Kohli",
+        "gender": "M",
+        "religion": "Hindu",
+        "mobileNumber": "9658745555",
+        "email": "axar@gmail.com",
+        "password": "Pass@1234",
+        "confirmPassword": "Pass@1234"
+    },
+    {
+        "profileFor": "M",
+        "name": "Siraj Kohli",
+        "gender": "M",
+        "religion": "Hindu",
+        "mobileNumber": "9658745555",
+        "email": "siraj@gmail.com",
+        "password": "Pass@1234",
+        "confirmPassword": "Pass@1234"
+    },
+    {
+        "profileFor": "M",
+        "name": "Ishant Kohli",
+        "gender": "M",
+        "religion": "Hindu",
+        "mobileNumber": "9658745555",
+        "email": "ishant@gmail.com",
+        "password": "Pass@1234",
+        "confirmPassword": "Pass@1234"
+    }
+]

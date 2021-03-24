@@ -1,26 +1,25 @@
 import React, { Suspense } from 'react';
 import { Redirect, Route } from "react-router-dom";
+import Loader from './components/SpinningLoader';
 import { appRoutes } from './PageRoutes';
 import { STORAGE } from './Utils/storage';
+import './App.css';
 
-const renderLoader = () => <h1>Loading</h1>;
+const renderLoader = () => <Loader />;
 
-const RedirectComponent = () => <Redirect to='/' />;
+const RedirectComponent = () => <Redirect to='/login' />;
 
 const mapRoutes = ({ route, isPrivate, Component }) => {
-    const isUserLoggedIn = STORAGE.getToken() || false;
+    const isLogin = STORAGE.getToken() || false;
+    console.log('login status: ', isLogin);
 
     return (<Route
         exact path={route}
-        component={
-            !isPrivate
-                ? Component
-                : (
-                    isUserLoggedIn && isPrivate
-                        ? Component
-                        : RedirectComponent
-                )
-        }
+        render={props => (
+            isPrivate && STORAGE.getToken()
+                ? <Component {...props} />
+                : (isPrivate ? <RedirectComponent /> : <Component />)
+        )}
     />);
 }
 

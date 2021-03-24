@@ -1,0 +1,22 @@
+[
+    {
+        "value": "",
+        "desc": "Select"
+    },
+    {
+        "value": "S",
+        "desc": "Single (never married)"
+    },
+    {
+        "value": "M",
+        "desc": "Married but separated"
+    },
+    {
+        "value": "W",
+        "desc": "Widowed and not remarried"
+    },
+    {
+        "value": "D",
+        "desc": "Divorced and not remarried"
+    }
+]

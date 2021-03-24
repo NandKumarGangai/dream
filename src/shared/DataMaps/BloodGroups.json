@@ -1,0 +1,22 @@
+[
+    {
+        "value": "",
+        "desc": "Select"
+    },
+    {
+        "value": "A",
+        "desc": "Group A"
+    },
+    {
+        "value": "B",
+        "desc": "Group B"
+    },
+    {
+        "value": "AB",
+        "desc": "Group AB"
+    },
+    {
+        "value": "O",
+        "desc": "Group O"
+    }
+]

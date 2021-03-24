@@ -5,6 +5,15 @@
         },
         "userLogin": {
             "path": "/api/v1/user-login"
+        },
+        "updateUserProfile": {
+            "path": "/api/v1/update-user-profile"
+        },
+        "getUserProfile": {
+            "path": "/api/v1/get-user-profile"
+        },
+        "getCandidateProfiles": {
+            "path": "/api/v1/get-candidate-profiles"
         }
     }
 }

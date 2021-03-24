@@ -4,6 +4,7 @@ const LoginPageComponent = lazy(() => import('../pages/LoginComponent'));
 const UserRegistrationComponent = lazy(() => import('../pages/UserRegistrationComponent'));
 const ForgotPasswordComponent = lazy(() => import('../pages/ForgotPasswordComponent'));
 const LandingPageComponent = lazy(() => import('../pages/LandingComponent'));
+const ProfileComponent = lazy(() => import('../pages/ProfileComponent'));
 
 export const appRoutes = [
     {
@@ -30,5 +31,10 @@ export const appRoutes = [
         route: '/home',
         isPrivate: true,
         Component: LandingPageComponent
+    },
+    {
+        route: '/profile',
+        isPrivate: false,
+        Component: ProfileComponent
     }
 ];

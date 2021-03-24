@@ -13,10 +13,19 @@ const rejectGenericError = _ => Promise.reject({
 const genericError = (res, err = {}) => {
     console.error('Error: ', err);
 
-    res.status(400).json({
+    return res.status(400).json({
         success: false,
         statusCode: 400,
         error: 'Something went wrong....'
+    });
+};
+
+const authorizationError = (res, err = {}) => {
+
+    return res.status(401).json({
+        success: false,
+        statusCode: 401,
+        error: 'You are not logged in....'
     });
 };
 
@@ -35,6 +44,7 @@ module.exports = {
     genericResponseSender,
     rejectGenericError,
     genericError,
+    authorizationError,
     saltRounds,
     status
 }

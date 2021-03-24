@@ -1,0 +1,14 @@
+[
+    {
+        "value": "",
+        "desc": "Select"
+    },
+    {
+        "value": "V",
+        "desc": "Vegeterian"
+    },
+    {
+        "value": "N",
+        "desc": "No-Vegeterian"
+    }
+]

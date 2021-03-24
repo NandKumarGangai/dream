@@ -1,0 +1,14 @@
+[
+    {
+        "value": "",
+        "desc": "Select"
+    },
+    {
+        "value": "N",
+        "desc": "Not Disabled"
+    },
+    {
+        "value": "D",
+        "desc": "Physically Disabled"
+    }
+]

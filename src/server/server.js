@@ -1,7 +1,9 @@
 const path = require('path');
 const cors = require('cors');
+const helmet = require('helmet');
 const express = require('express');
 const jwt = require('jsonwebtoken');
+const compression = require('compression');
 const dbConnect = require('./db/connection');
 const routes = require('./routes');
 
@@ -11,6 +13,8 @@ const PORT = 8000;
 
 const runServer = app => {
     app.use(cors());
+    app.use(helmet());
+    app.use(compression());
     app.use(express.json());
     app.use(express.static('build'));
     app.use('/api/v1', routes);

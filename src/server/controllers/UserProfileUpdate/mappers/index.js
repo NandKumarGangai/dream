@@ -6,6 +6,13 @@ const {
     mapEducationAndCareer,
     mapFamilyDetails
 } = require('./mapProfileDetails');
+const {
+    unMapBasicDetails,
+    unMapLifeStyleDetails,
+    unMapReligiousDetails,
+    unMapEducationAndCareer,
+    unMapFamilyDetails
+} = require('./unMapProfileDetails');
 
 module.exports = {
     mapAddressDetails,
@@ -15,5 +22,11 @@ module.exports = {
     mapLifeStyleDetails,
     mapReligiousDetails,
     mapEducationAndCareer,
-    mapFamilyDetails
+    mapFamilyDetails,
+
+    unMapBasicDetails,
+    unMapLifeStyleDetails,
+    unMapReligiousDetails,
+    unMapEducationAndCareer,
+    unMapFamilyDetails
 }

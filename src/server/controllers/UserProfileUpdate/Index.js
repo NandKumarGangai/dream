@@ -5,7 +5,12 @@ const {
     mapLifeStyleDetails,
     mapReligiousDetails,
     mapEducationAndCareer,
-    mapFamilyDetails
+    mapFamilyDetails,
+    unMapBasicDetails,
+    unMapLifeStyleDetails,
+    unMapReligiousDetails,
+    unMapEducationAndCareer,
+    unMapFamilyDetails
 } = require('./mappers');
 const {
     genericError,
@@ -13,7 +18,6 @@ const {
     authorizationError,
     status
 } = require('../../utils');
-const { unMapUserInfo } = require('../GetUserProfileInfo/unmappers/unmapUserInfo');
 
 const userProfileUpdateController = (req, res) => {
     const email = _get(req, 'body.userInfo.email');
@@ -40,9 +44,17 @@ const userProfileUpdateController = (req, res) => {
             { ...output },
             { returnNewDocument: true }
         );
-
+        console.log(updatedResponse)
+        const mappedResponse = {
+            ...unMapBasicDetails(updatedResponse.basicDetails),
+            ...unMapLifeStyleDetails(updatedResponse.lifeStyleDetails),
+            ...unMapReligiousDetails(updatedResponse.religiousDetails),
+            ...unMapEducationAndCareer(updatedResponse.educationAndCareer),
+            ...unMapFamilyDetails(updatedResponse.familyDetails)
+        };
+        
         return updatedResponse
-            ? genericResponseSender(res, { status: status.SUCCESS, response: updatedResponse })
+            ? genericResponseSender(res, { status: status.SUCCESS, response: mappedResponse })
             : genericError(res);
     });
 };

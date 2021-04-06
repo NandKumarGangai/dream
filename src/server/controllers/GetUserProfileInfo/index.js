@@ -13,7 +13,7 @@ const {
     unMapReligiousDetails,
     unMapEducationAndCareer,
     unMapFamilyDetails
-} = require('../UserProfileUpdate/mappers');
+} = require('../CandidateProfileUpdate/mappers');
 
 const getUserProfileInfoController = (req, res) => {
     const email = _get(req, 'body.userInfo.email') || _get(req, 'body.email');

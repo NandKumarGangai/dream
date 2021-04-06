@@ -6,7 +6,7 @@ const {
     genericResponseSender,
     status
 } = require('../../utils');
-const { mapContactDetails } = require('../UserProfileUpdate/mappers');
+const { mapContactDetails } = require('../CandidateProfileUpdate/mappers');
 
 // Need to handle mongoDB Errors
 const userRegistrationController = (req, res) => {

@@ -1,6 +1,6 @@
 const { userLoginController } = require('./UserLogin');
 const { userRegistrationController } = require('./UserRegistration');
-const { userProfileUpdateController } = require('./UserProfileUpdate');
+const { userProfileUpdateController } = require('./CandidateProfileUpdate/index');
 const { getUserProfileInfoController } = require('./GetUserProfileInfo');
 const { getCandidateProfilesController } = require('./GetCandidateProfiles');
 

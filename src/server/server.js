@@ -53,6 +53,7 @@ const runServer = app => {
     // });
 
     app.get('/', (req, res) => {
+        console.log('path: ', path.join(__dirname, 'build', 'index.html'))
         res.sendFile(path.join(__dirname, 'build', 'index.html'));
     });
 

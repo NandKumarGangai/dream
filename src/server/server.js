@@ -9,7 +9,7 @@ const routes = require('./routes');
 
 require('dotenv').config();
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 const runServer = app => {
     app.use(cors());

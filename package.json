@@ -54,7 +54,7 @@
     "yup": "^0.32.8"
   },
   "scripts": {
-    "start": "npm run build && npm run server",
+    "start": "npm run server",
     "start:client": "react-scripts start",
     "build": "rimraf build && react-scripts build",
     "test": "react-scripts test",
@@ -65,7 +65,8 @@
     "server:dev": "cross-env NODE_ENV=development nodemon src/server",
     "server": "cross-env npm run build && cross-env NODE_ENV=production node src/server",
     "del_node_modules": "rimraf node_modules",
-    "build:server": "rimraf dist && babel src/server -d dist"
+    "build:server": "rimraf dist && babel src/server -d dist",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",

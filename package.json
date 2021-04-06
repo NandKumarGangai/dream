@@ -56,7 +56,8 @@
   "scripts": {
     "start": "npm run server",
     "start:client": "react-scripts start",
-    "build": "rimraf build && react-scripts build && npm run build:server",
+    "//build": "rimraf build && react-scripts build && npm run build:server",
+    "build": "echo 'Hello world'",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
@@ -64,7 +65,7 @@
     "serve": "npm run build && serve -s build",
     "server:dev": "cross-env NODE_ENV=development nodemon src/server",
     "//server": "cross-env npm run build && cross-env NODE_ENV=production node src/server",
-    "server": "cross-env NODE_ENV=production node ./src/server/index.js",
+    "server": "cross-env NODE_ENV=production node src/server.js",
     "del_node_modules": "rimraf node_modules",
     "build:server": "rimraf dist && babel src/server -d dist",
     "//postinstall": "npm run build"

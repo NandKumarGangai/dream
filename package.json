@@ -56,7 +56,7 @@
   "scripts": {
     "start": "npm run server",
     "start:client": "react-scripts start",
-    "//build": "rimraf build dist && react-scripts build && npm run build:server",
+    "build": "rimraf build dist && react-scripts build && npm run build:server",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
